@@ -18,7 +18,7 @@ function Home() {
         const data = await res.text();
         setResult(data);
         } catch (err) {
-        setResult("❌ " + err.message);
+        setResult(err.message);
         }
     };
 
@@ -37,7 +37,7 @@ function Home() {
     <br/>
         {keycloak.authenticated ? (
             <>
-            <h1>🎉 Welcome, {keycloak.tokenParsed?.preferred_username}!</h1>
+            <h1>Welcome, {keycloak.tokenParsed?.preferred_username}!</h1>
             <p>Familiy Name: {keycloak.tokenParsed?.family_name}</p>
             <p>Given name: {keycloak.tokenParsed?.given_name}</p>
             <p>Email: {keycloak.tokenParsed?.email}</p>
@@ -50,10 +50,10 @@ function Home() {
                 ))}
             </ul>
             <p>Token: {keycloak.token}</p>
-            <button onClick={() => keycloak.logout()}>🚪 Logout</button>
+            <button onClick={() => keycloak.logout()}>Logout</button>
             </>
         ) : (
-            <button onClick={() => keycloak.login()}>🔑 Login</button>
+            <button onClick={() => keycloak.login()}>Login</button>
         )}
         <br/> <br/>
         <div>
