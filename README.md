@@ -1,3 +1,8 @@
+# Installation
+ ```
+ npm install keycloak-js @react-keycloak/web
+```
+
 # Configuration
 
 Keycloak condfiguration is defined in the file keycloak.js
